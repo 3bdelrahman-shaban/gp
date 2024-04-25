@@ -408,4 +408,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
       this.isRecognitionInProgress = false;  // Reset flag
     }
   }
+  logout(){
+      this.route.navigate(['/auth'],{relativeTo:this.router})
+  }
 }

@@ -5,10 +5,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="navmenu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto d-flex">
           <li class="nav-item">
             <a class="nav-link text-white" style="cursor: pointer" (click)="addguardfunc()">Add Guard</a>
           </li>
+          <li (click)="logout()" style="width:10%; bottom:10px; cursor: pointer"class="nav-item">
+            <a>  <span class="ms-5  d-sm-block nav-link px-0 align-middle text-white">Logout</span></a>
+        </li>
         </ul>
       </div>
     </div>
