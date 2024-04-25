@@ -7,15 +7,15 @@ const app = express();
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'https://gp-henna.vercel.app/', // Update with your Angular app URL
+    origin: 'https://gp-henna.vercel.app', // Update with your Angular app URL
     optionsSuccessStatus: 200,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,            // enable set cookie
     allowedHeaders: "Content-Type, Authorization"
 };
 
-app.use(cors());
 app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 // Multer configuration for handling file uploads
@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // POST endpoint to receive image uploads
-app.post('/upload', upload.single('image'), (req, res) => {
+app.post('/upload', upload.single('file'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: 'No file uploaded' });
     }
