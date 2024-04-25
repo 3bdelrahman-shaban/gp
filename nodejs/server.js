@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const app = express();
 const corsOptions = {
-    origin: 'https://blind-assistant-bktuudmmf-3bdelrahmanshabans-projects.vercel.app',
+    origin: 'https://gp-henna.vercel.app/',
      // Update with your Angular app URL
     optionsSuccessStatus: 200,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
