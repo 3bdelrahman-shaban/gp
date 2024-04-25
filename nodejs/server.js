@@ -29,5 +29,7 @@ app.post('/api/control', async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 });
-
+app.listen(3001, () => {
+    console.log("Server is Running")
+})
 module.exports = app;
