@@ -1,0 +1,23 @@
+{
+  "orgId": "team_zTx3TOQq7i8HKIfkxEmrOr2Z",
+  "projectId": "prj_INTKTrL5VAHSAqTiz6kfeIW5ymUK",
+  "headers": [
+    {
+      "source": "/api/control",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,HEAD,PUT,PATCH,POST,DELETE"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "*"
+        }
+      ]
+    }
+  ]
+}
