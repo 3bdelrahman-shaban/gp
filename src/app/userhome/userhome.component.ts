@@ -184,7 +184,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
           console.log('Speech recognition ended');
           const outputText = output.textContent;
           if (this.chatcalled == true) {
-            const url = 'https://gp-henna.vercel.app/api/control';
+            const url = 'https://gp2-6nth.onrender.com/';
             const options = {
               method: 'POST',
               headers: {
@@ -377,7 +377,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
   
-        this.http.post<{ text: string }>('https://gp-henna.vercel.app/upload', formData)
+        this.http.post<{ text: string }>('https://gp2-6nth.onrender.com/', formData)
           .subscribe(
             data => {
               console.log('HTTP POST success:', data);
