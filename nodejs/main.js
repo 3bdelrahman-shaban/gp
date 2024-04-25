@@ -7,7 +7,7 @@ const app = express();
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'https://blind-assistant-82wc7kjo1-3bdelrahmanshabans-projects.vercel.app', // Update with your Angular app URL
+    origin: 'https://gp-henna.vercel.app/', // Update with your Angular app URL
     optionsSuccessStatus: 200,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,            // enable set cookie
