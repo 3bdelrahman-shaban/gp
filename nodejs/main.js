@@ -76,4 +76,4 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.listen(3001, () => {
     console.log("Server is Running")
 })
-module.exports = app;
+
