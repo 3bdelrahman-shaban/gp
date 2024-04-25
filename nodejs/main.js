@@ -7,12 +7,16 @@ const app = express();
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'https://gp-henna.vercel.app', // Update with your Angular app URL
+    origin: 'https://gp-henna.vercel.app', // Remove the trailing slash
     optionsSuccessStatus: 200,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,            // enable set cookie
-    allowedHeaders: "Content-Type, Authorization"
+    credentials: true, // enable set cookie
+    allowedHeaders: ['Content-Type', 'Authorization'] // Specify an array of allowed headers
 };
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
 
 app.options('*', cors(corsOptions));
 
