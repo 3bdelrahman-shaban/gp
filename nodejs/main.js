@@ -73,5 +73,8 @@ app.post('/upload', upload.single('file'), (req, res) => {
         console.log(`child process exited with code ${code}`);
     });
 });
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 module.exports = app;
