@@ -3,9 +3,11 @@
     "projectId": "prj_INTKTrL5VAHSAqTiz6kfeIW5ymUK",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
-        "dev": "node index.js"
+        "dev": "node server.js",
+        "start": "node server.js",
+        "build": "npm install; npm run build"  
     },
     "author": "",
     "license": "ISC",
