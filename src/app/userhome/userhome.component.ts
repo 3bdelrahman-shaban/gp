@@ -377,7 +377,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
   
-        this.http.post<{ text: string }>('https:/gp2-6nth.onrender.com/upload', formData)
+        this.http.post<{ text: string }>('https://gp2-6nth.onrender.com/upload', formData)
           .subscribe(
             data => {
               console.log('HTTP POST success:', data);
