@@ -19,7 +19,7 @@ export class TracklocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.getlocation().subscribe((data) => {
-      this.userLocation = data[0];
+      this.userLocation = data[data.length-1];
       console.log(this.userLocation);
       this.loadGoogleMaps(() => {
         this.initMap();

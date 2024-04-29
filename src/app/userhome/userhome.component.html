@@ -1,21 +1,24 @@
 <nav class="navbar navbar-expand-lg text-white py-3">
-    <div class="container">
+  <div class="container">
       <a style="cursor: pointer" class="navbar-brand text-white">Blindess Assistance </a>
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
       </button>
       <div id="navmenu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto d-flex">
-          <li class="nav-item">
-            <a class="nav-link text-white" style="cursor: pointer" (click)="addguardfunc()">Add Guard</a>
-          </li>
-          <li (click)="logout()" style="width:10%; bottom:10px; cursor: pointer"class="nav-item">
-            <a>  <span class="ms-5  d-sm-block nav-link px-0 align-middle text-white">Logout</span></a>
-        </li>
-        </ul>
+          <ul class="navbar-nav ms-auto d-flex">
+              <li class="nav-item" style="margin-right:40px;">
+                  <a class="nav-link text-white" style="cursor: pointer" (click)="addguardfunc()">Add Guard</a>
+              </li>
+              <li (click)="logout()" style="width:10%; bottom:10px; cursor: pointer" class="nav-item">
+                  <a>
+                      <span class=" d-sm-block nav-link px-0 align-middle text-white">Logout</span>
+                  </a>
+              </li>
+          </ul>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
+
   
   <div class="container d-flex flex-column flex-sm-column flex-md-row">
     <div class="card w-sm-100 w-md-50 p-3">

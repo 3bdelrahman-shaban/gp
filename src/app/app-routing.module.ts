@@ -18,7 +18,7 @@ const routes: Routes = [
     {path:'',component:Guardhome2Component},
     {path:'message',component:MessagesComponent},
     {path:'track',component:TracklocationComponent},
-  ],canActivate: [AuthGuard] },
+  ]},
   {path:'**',component:AuthComponent}
   
 ];

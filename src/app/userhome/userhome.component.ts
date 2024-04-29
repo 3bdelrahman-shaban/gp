@@ -75,8 +75,8 @@ declare enum SpeechRecognitionErrorCode {
 export class UserhomeComponent implements OnInit ,OnDestroy{
   mapscalled: boolean = false;
   chatcalled: boolean = false;
-
-  
+  originlat:any
+  originlng:any
   map:any
   interval:any
   timeout:any
@@ -162,7 +162,8 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
                 this.chatcalled = false;
                 transcript = transcript.replace('go', ' ').trim();
                 console.log(transcript);
-                this.openGoogleMapsApp("29.8347672,31.252034", transcript);  // Replace with your desired origin coordinates
+                
+                this.openGoogleMapsApp(this.originlat,this.originlng,transcript);  // Replace with your desired origin coordinates
             }
             else if(transcript==='read'){
               this.chatcalled = false;
@@ -184,7 +185,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
           console.log('Speech recognition ended');
           const outputText = output.textContent;
           if (this.chatcalled == true) {
-            const url = 'https://blind-assistant-531ev2h5k-3bdelrahmanshabans-projects.vercel.app/api/control';
+            const url = ' http://localhost:3002/api/control';
             const options = {
               method: 'POST',
               headers: {
@@ -265,7 +266,8 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-
+        this.originlat=pos.lat
+        this.originlng=pos.lng
         const geocoder = new google.maps.Geocoder();
         geocoder.geocode({ 'location': pos }, (results: any, status: any) => {
           if (status === 'OK') {
@@ -321,8 +323,10 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
     });
   }
 
-  openGoogleMapsApp(originCoords: string, destinationName: string) {
+  openGoogleMapsApp(lat: string,lng:string,destinationName: string) {
+    
     // Geocode the destination name to get its coordinates
+    const originCoords=lat+ "," + lng
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'address': destinationName }, (results: any, status: any) => {
         if (status === 'OK') {
@@ -377,7 +381,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
   
-        this.http.post<{ text: string }>('https://blind-assistant-531ev2h5k-3bdelrahmanshabans-projects.vercel.app/upload', formData)
+        this.http.post<{ text: string }>(' http://localhost:3000/upload', formData)
           .subscribe(
             data => {
               console.log('HTTP POST success:', data);
@@ -390,7 +394,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
             }
           );
       } else {
-        console.log('Using the last selected image');
+        console.log('Using the last selec   ted image');
         // Call fetchAndSpeakText to extract and speak text from the last selected image
       }
     });
@@ -398,6 +402,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
   
 
   textToSpeech(message: string): void {
+    console.log('the message is ',message)
     console.log('textToSpeech triggered');
     if ('speechSynthesis' in window) {
       const synth = window.speechSynthesis;
