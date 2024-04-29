@@ -185,7 +185,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
           console.log('Speech recognition ended');
           const outputText = output.textContent;
           if (this.chatcalled == true) {
-            const url = ' http://localhost:3002/api/control';
+            const url = 'https://gp2-6nth.onrender.com/api/control';
             const options = {
               method: 'POST',
               headers: {
@@ -381,7 +381,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
   
-        this.http.post<{ text: string }>(' http://localhost:3000/upload', formData)
+        this.http.post<{ text: string }>('https://gp2-6nth.onrender.com/upload', formData)
           .subscribe(
             data => {
               console.log('HTTP POST success:', data);
