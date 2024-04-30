@@ -29,11 +29,11 @@ export class MessagesComponent {
     // Combine and sort messages by timestamp in reverse order
     return [...this.returnedlocation].sort((a, b) => {
       // Compare time first (reverse order)
-      const timeComparison = new Date(b.time).getTime() - new Date(a.time).getTime();
+      const timeComparison = new Date(b.date).getTime() - new Date(a.date).getTime();
       
       // If times are equal, compare date (reverse order)
       if (timeComparison === 0) {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.time).getTime() - new Date(a.time).getTime();
       }
       
       return   timeComparison;
