@@ -33,7 +33,7 @@ export class MessagesComponent {
       
       // If times are equal, compare date (reverse order)
       if (timeComparison === 0) {
-        return new Date(b.time).getTime() - new Date(a.time).getTime();
+        return new Date(a.time).getTime() - new Date(b.time).getTime();
       }
       
       return   timeComparison;
