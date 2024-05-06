@@ -28,4 +28,7 @@ export class AddGuardComponent {
 
     }
   }
+ gotousehome(){
+    this.route.navigate(['/main'])
+  }
 }
