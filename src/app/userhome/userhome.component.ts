@@ -333,7 +333,7 @@ export class UserhomeComponent implements OnInit ,OnDestroy{
             const destination = results[0].geometry.location.lat() + "," + results[0].geometry.location.lng();
             
             // Explicitly set the zoom level to 12
-            const url = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${encodeURIComponent(destination)}&z=12&travelmode=walking&dir_action=navigate`;
+            const url = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${encodeURIComponent(destination)}&travelmode=walking&dir_action=navigate`;
             
             window.open(url, '_blank');
             console.log(url);
